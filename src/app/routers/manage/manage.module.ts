@@ -1,0 +1,11 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ManageRoutingModule } from './manage-routing.module';
+import { TestManageComponent } from './test-manage/test-manage.component';
+
+@NgModule({
+    declarations: [TestManageComponent],
+    imports: [CommonModule, ManageRoutingModule],
+})
+export class ManageModule {}

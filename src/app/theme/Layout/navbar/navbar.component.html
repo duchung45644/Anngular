@@ -1,0 +1,60 @@
+<div class="navbar navbar-expand navbar-light px-0 px-lg-3">
+    <div class="overflow-auto overflow-lg-visible scrollbar-hidden flex-1">
+        <ul class="navbar-nav flex-row text-nowrap">
+            <li class="nav-item nav-item-dropdown-lg mega-menu-full" *ngFor="let menuItem of menuForm">
+                <!-- If use type 2 use class 'dropdown' -->
+                <a
+                    routerLink="{{ menuItem.rlink || '#' }}"
+                    class="navbar-nav-link {{ menuItem.subMenu.list && 'dropdown-toggle' }}"
+                    data-toggle="dropdown"
+                >
+                    <i class="{{ menuItem.icon }} mr-2"></i>
+                    {{ menuItem.name }}
+                </a>
+
+                <!-- Type 1 : Mega menu-->
+                <div class="dropdown-menu dropdown-scrollable-lg wmin-lg-300 p-0" *ngIf="menuItem.subMenu.list">
+                    <div class="dropdown-content-body">
+                        <div class="row">
+                            <div class="col-md-3 mb-3 mb-md-0" *ngFor="let subItem of menuItem.subMenu.list">
+                                <div class="font-weight-semibold border-bottom pb-2 mb-2">{{ subItem.name }}</div>
+                                <a
+                                    *ngFor="let opt of subItem.inSubMenu"
+                                    routerLink="{{ opt.rlink }}"
+                                    class="dropdown-item rounded"
+                                >
+                                    {{ opt.name }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /type 1 -->
+
+                <!-- Type 2: Level Menu -->
+                <div class="dropdown-menu" *ngIf="menuItem.subMenu.list">
+                    <div class="dropdown-header">{{ menuItem.subMenu.subMenuTitle }}</div>
+                    <div class="dropdown-submenu dropdown-submenu-right" *ngFor="let subItem of menuItem.subMenu.list">
+                        <a routerLink="{{ subItem.name }}" class="dropdown-item dropdown-toggle">
+                            <i *ngIf="subItem.icon" class="{{ subItem.icon }}"></i>
+                            {{ subItem.name }}
+                        </a>
+
+                        <!-- Start: inSubmenu -->
+                        <div class="dropdown-menu" *ngIf="subItem.inSubMenu">
+                            <a
+                                *ngFor="let opt of subItem.inSubMenu"
+                                routerLink="{{ opt.rlink }}"
+                                class="dropdown-item rounded"
+                            >
+                                {{ opt.name }}
+                            </a>
+                        </div>
+                        <!-- End: inSubmenu -->
+                    </div>
+                </div>
+                <!-- /type 2 -->
+            </li>
+        </ul>
+    </div>
+</div>

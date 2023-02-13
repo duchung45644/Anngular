@@ -1,0 +1,20 @@
+<div class="page-header">
+    <div class="page-header-content header-elements-lg-inline">
+        <!-- <div class="page-title d-flex">
+            <h4>
+                <i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Multiple Navbars</span> - Top
+                Fixed
+            </h4>
+            <a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+        </div> -->
+
+        <div class="header-elements d-none py-0 mb-3 mb-lg-0">
+            <div class="breadcrumb">
+                <a href="#" class="breadcrumb-item" *ngFor="let item of breadCrumbList">
+                    <i class="{{ item.icon }}"></i>
+                    {{ item.name }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
