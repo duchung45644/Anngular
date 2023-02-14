@@ -103,4 +103,6 @@ export class TestCategoryComponent {
             ExtensionRequest: 0,
         },
     ];
+
+    name = 'hehehehehehehe';
 }
