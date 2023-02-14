@@ -10,7 +10,7 @@ import { TableComponent } from './Layout/table/table.component';
 import { TabsComponent } from './Layout/tabs/tabs.component';
 import { LoginComponent } from './Layout/login/login.component';
 import { BreadCrumbComponent } from './Layout/bread-crumb/bread-crumb.component';
-import { SafePipe } from '../safe.pipe';
+import { SafePipe } from '../pipe/safe.pipe';
 import { DefaultLayoutComponent } from './Layout/default-layout/default-layout.component';
 
 @NgModule({
@@ -28,17 +28,17 @@ import { DefaultLayoutComponent } from './Layout/default-layout/default-layout.c
         SafePipe,
     ],
     imports: [CommonModule, RouterModule],
+    exports: [
+        BannerComponent,
+        DataTableComponent,
+        DefaultLayoutComponent,
+        FooterComponent,
+        ChartComponent,
+        NavbarComponent,
+        TableComponent,
+        TabsComponent,
+        LoginComponent,
+        BreadCrumbComponent,
+    ],
 })
 export class ThemeModule {}
-exports: [
-    BannerComponent,
-    DataTableComponent,
-    DefaultLayoutComponent,
-    FooterComponent,
-    ChartComponent,
-    NavbarComponent,
-    TableComponent,
-    TabsComponent,
-    LoginComponent,
-    BreadCrumbComponent,
-];

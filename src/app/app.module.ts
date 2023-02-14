@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ThemeModule } from './theme/theme.module';
-import { SafePipe } from './safe.pipe';
 
 @NgModule({
     declarations: [AppComponent],

@@ -12,6 +12,9 @@ export class DataTableComponent {
     tableHtmlString = '';
 
     constructor() {
+        console.warn(this.dataTableConfig1);
+        console.warn(this.dataContent1);
+
         this.tableHtmlString = this.renderTableBody();
     }
 
